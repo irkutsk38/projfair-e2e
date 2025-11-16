@@ -28,6 +28,8 @@ public class DirectorTests extends A_BaseTest {
         app.projectReportsPage.filterAccordion.click();
         if (!app.projectReportsPage.checkbox.isSelected()) {
             app.projectReportsPage.checkbox.click();
+        } else if (app.projectReportsPage.checkboxAlt.isSelected()) {
+            app.projectReportsPage.checkboxAlt.click();
         }
         app.projectReportsPage.checkbox.shouldBe(checked);
         app.projectReportsPage.projectReportsList.shouldHave(sizeGreaterThan(0));
