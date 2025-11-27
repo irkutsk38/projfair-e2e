@@ -8,7 +8,7 @@ public class SupervisorTests extends A_BaseTest {
     void login(){
         app.mainPage.open();
         //app.mainPage.login();
-        app.mainPage.mockLogin(true);
+        app.mainPage.mockLogin(true, false, "");
     }
     @Test
     void checkProposals() {

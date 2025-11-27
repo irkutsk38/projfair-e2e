@@ -5,6 +5,6 @@ public class CandidateTests extends A_BaseTest {
     void login(){
         app.mainPage.open();
         //app.mainPage.login();
-        app.mainPage.mockLogin(false);
+        app.mainPage.mockLogin(false,false,"");
     }
 }

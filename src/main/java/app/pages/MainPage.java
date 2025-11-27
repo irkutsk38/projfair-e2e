@@ -20,13 +20,24 @@ public class MainPage extends BasePage {
         super(pageURL);
     }
 
-    public void mockLogin(boolean asSupervisor) {
+    public void mockLogin(boolean asSupervisor, boolean backendPresent, String prompt) {
         authButton.click();
-        if (asSupervisor) {
-            confirm();
+        if (backendPresent) {
+            if (asSupervisor) {
+                confirm();
+                prompt(prompt); 
+            } else {
+                dismiss();
+                confirm();
+                prompt(prompt); 
+            }
         } else {
-            dismiss();
-            confirm();
+            if (asSupervisor) {
+                confirm();
+            } else {
+                dismiss();
+                confirm();
+            }
         }
     }
 
